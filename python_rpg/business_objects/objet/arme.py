@@ -1,4 +1,4 @@
-from business_objects.item.abstract_equipement import AbstractEquipement
+from business_objects.objet.abstract_equipement import AbstractEquipement
 
 
 class Arme(AbstractEquipement):
