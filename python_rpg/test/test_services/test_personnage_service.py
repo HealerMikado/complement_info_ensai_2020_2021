@@ -30,7 +30,7 @@ class TestPersonnageService(TestCase):
     def test_attaque_voleur(self):
         #GIVEN un personnage de type voleur
         voleur = Personnage(VOLEUR)
-        expected_output = "Danse la carioca"
+        expected_output = "Tire à l'arc"
 
         #WHEN
         actual_output = PersonnageService.attaque(voleur)
@@ -53,7 +53,7 @@ class TestPersonnageService(TestCase):
     def test_defense_guerrier(self):
         # GIVEN un personnage de type magicien
         guerrier = Personnage(GUERRIER)
-        expected_output = "Utilise une barrière magique"
+        expected_output = "Pare avec son bouclier"
 
         # WHEN
         actual_output = PersonnageService.defense(guerrier)
@@ -64,7 +64,7 @@ class TestPersonnageService(TestCase):
     def test_defense_voleur(self):
         # GIVEN un personnage de type voleur
         voleur = Personnage(VOLEUR)
-        expected_output = "Tire à l'arc"
+        expected_output = "Esquive adroitement l'attaque"
 
         # WHEN
         actual_output = PersonnageService.defense(voleur)

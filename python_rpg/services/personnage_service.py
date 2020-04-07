@@ -18,7 +18,15 @@ class PersonnageService:
         :return: la phrase de l'attaque
         :rtype: str
         """
-        pass
+        phrase = ""
+        if personnage.personnage_type == MAGICIEN:
+            phrase = "Lance une boule de feu"
+        elif personnage.personnage_type == VOLEUR:
+            phrase = "Tire à l'arc"
+        elif personnage.personnage_type == GUERRIER:
+            phrase = "Donne un coup d'épée"
+
+        return phrase
 
     @staticmethod
     def defense(personnage):
@@ -29,4 +37,12 @@ class PersonnageService:
         :return: la phrase de la defense
         :rtype: str
         """
-        pass
+        phrase = ""
+        if personnage.personnage_type == MAGICIEN:
+            phrase = "Utilise une barrière magique"
+        elif personnage.personnage_type == VOLEUR:
+            phrase = "Esquive adroitement l'attaque"
+        elif personnage.personnage_type == GUERRIER:
+            phrase = "Pare avec son bouclier"
+
+        return phrase
