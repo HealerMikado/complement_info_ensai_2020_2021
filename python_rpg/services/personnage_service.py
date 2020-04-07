@@ -1,5 +1,5 @@
 from business_objects.personnage.abstract_personnage import AbstractPersonnage
-
+from business_objects.attaque_info import AttaqueInfo
 
 class PersonnageService:
     """
@@ -15,18 +15,20 @@ class PersonnageService:
         Détermine à partir d'un personnage le texte de son attaque
         :param personnage: le personnage qui attaque
         :type personnage: AbstractPersonnage
-        :return: la phrase de l'attaque
-        :rtype: str
+        :return: l'attaque effectuée
+        :rtype: AttaqueInfo
         """
         return personnage.attaque()
 
     @staticmethod
-    def defense(personnage):
+    def defense(personnage, attaque_info):
         """
         Détermine à partir d'un personnage le texte de sa defense
         :param personnage: le personnage qui defend
-        :type personnage: Personnage.personnage
-        :return: la phrase de la defense
-        :rtype: str
+        :type personnage: AbstractPersonnage
+        :param attaque_info : les informations de l'attaque
+        :type attaque_info : AttaqueInfo
+        :return: l'attaque effectuée mise à jour de la défense
+        :rtype: AttaqueInfo
         """
-        pass
+        return personnage.defense(attaque_info)

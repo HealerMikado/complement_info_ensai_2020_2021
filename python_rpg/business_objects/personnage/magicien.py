@@ -4,18 +4,16 @@ from exceptions.arme_interdite_exception import ArmeInterditeException
 
 
 class Magicien(AbstractPersonnage):
-    def __init__(self, arme, force, agilite, magie, defense, point_de_vie):
-        super().__init__(arme, force, agilite, magie, defense, point_de_vie)
+    def __init__(self, arme, armure, force, agilite, magie, defense,
+                 point_de_vie):
+        super().__init__(arme, armure, force, agilite, magie, defense,
+                         point_de_vie)
 
     def attaque(self):
-        degat = 10
-        phrase = ""
-        if self.arme.nom == "Baton de feu":
-            phrase = "Lance des boules de feu"
-        elif self.arme.nom == "Baton de glace":
-            phrase = "Fait tomber des pic de glace"
-        elif self.arme.nom == "Necronomicon":
-            phrase = "Invoque un Grand Ancien"
-        else:
-            raise ArmeInterditeException(self, self.arme)
-        return AttaqueInfo(phrase, degat)
+        #code spécifique au magicien ici
+        return self.arme.utiliser_arme(self.statistique)
+
+    def defense(self, attaque_info):
+        # code spécifique au magicien ici
+        return self.armure.utiliser_armure(self.statistique, attaque_info)
+

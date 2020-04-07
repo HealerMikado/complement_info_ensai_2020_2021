@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from business_objects.item.arme import Arme
+from business_objects.objet.arme.abstract_arme import Arme
 from business_objects.personnage.magicien import Magicien
 from exceptions.arme_interdite_exception import ArmeInterditeException
 
