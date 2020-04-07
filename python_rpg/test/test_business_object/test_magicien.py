@@ -2,6 +2,7 @@ from unittest import TestCase
 
 from business_objects.item.arme import Arme
 from business_objects.personnage.magicien import Magicien
+from exceptions.arme_interdite_exception import ArmeInterditeException
 
 
 class TestMagicien(TestCase):
@@ -34,3 +35,13 @@ class TestMagicien(TestCase):
         actual_output = magicien.attaque().phrase_attaque
         # THEN
         self.assertEqual(expected_output, actual_output)
+
+
+    def test_ArmeInterditeException(self):
+        # GIVEN
+        arme = Arme("", 0, 0, 0, 0, 0)
+        magicien = Magicien(arme, 0, 0, 0, 0, 0)
+        # WHEN
+        # THEN
+        with self.assertRaises(ArmeInterditeException):
+            magicien.attaque().phrase_attaque
