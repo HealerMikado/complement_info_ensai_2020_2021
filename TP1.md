@@ -229,14 +229,25 @@ En procédant ainsi, et avec un IDE tel que PyCharm, si vous définissez une cla
 
 #### Exercice 2 :
 
-- Récupérez le code de la branche tp1_ex2
+- Commiter votre code pour pouvoir le récupérer plus tard
+
+  ````shell
+  git commit -m "tp1 ex1"
+  ````
+
+- Récupérez le code de la branche tp1_ex2 avec un 
+
+  ````shell
+  git checkout TP1_ex2
+  ````
 
 - En vous basant sur la modélisation précédente et le code fourni, codez  dans le package personnage et dans des fichiers séparés les classes:
+  
   - AbstractPersonnage
   - Magicien
   - Guerrier
-  - Voleur
-
+- Voleur
+  
   
 
 ### 2.3 Gestion des statistiques et composition
@@ -345,7 +356,7 @@ En vous basant sur la modélisation précédente et le code fourni :
 
 - Mettez à jour la classe AbstractPersonnage
 - Dans le package business_objet implémentez (codez) la classe Statistique
-- Dans le package item implémentez la classe AbstractEquipement
+- Créez un package item et implémentez la classe AbstractEquipement
 
 À partir de maintenant on peut ajouter autant de nouvelles statistique qu'on le souhaite, nos personnages et nos équipements y auront accès, plus de risque d'oublie ! :relieved:
 
