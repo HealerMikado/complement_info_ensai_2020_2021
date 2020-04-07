@@ -5,10 +5,9 @@ from business_objects.statistique import Statistique
 
 
 class AbstractPersonnage(ABC):
-    def __init__(self, arme, force, agilite, magie, defense, point_de_vie):
+    def __init__(self, force, agilite, magie, defense, point_de_vie):
         self.statistique = Statistique(force, agilite, magie, defense,
                                        point_de_vie)
-        self.arme = arme
 
     @abstractmethod  # décorateur qui définit une méthode comme abstraite
     def attaque(self):

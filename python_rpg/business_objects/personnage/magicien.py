@@ -8,14 +8,4 @@ class Magicien(AbstractPersonnage):
         super().__init__(arme, force, agilite, magie, defense, point_de_vie)
 
     def attaque(self):
-        degat = 10
-        phrase = ""
-        if self.arme.nom == "Baton de feu":
-            phrase = "Lance des boules de feu"
-        elif self.arme.nom == "Baton de glace":
-            phrase = "Fait tomber des pic de glace"
-        elif self.arme.nom == "Necronomicon":
-            phrase = "Invoque un Grand Ancien"
-        else:
-            raise ArmeInterditeException(self, self.arme)
-        return AttaqueInfo(phrase, degat)
+        pass

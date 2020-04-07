@@ -9,8 +9,9 @@ class TestMagicien(TestCase):
     def test_arme_baton_de_feu(self):
         # GIVEN
         arme = Arme("Baton de feu", 0, 0, 0, 0, 0)
-        magicien = Magicien(arme, 0, 0, 0, 0, 0)
-        expected_output = "Lance des boules de feu"
+        magicien = Magicien(arme=arme, force=0, agilite=0, magie=0,
+                    defense=0, point_de_vie=0)
+        expected_output = "Lance des explosions de feu"
         # WHEN
         actual_output = magicien.attaque().phrase_attaque
         # THEN
@@ -18,8 +19,9 @@ class TestMagicien(TestCase):
 
     def test_arme_baton_de_feu(self):
         # GIVEN
-        arme = Arme("Baton de glace", 0, 0, 0, 0, 0)
-        magicien = Magicien(arme, 0, 0, 0, 0, 0)
+        arme = Arme("", 0, 0, 0, 0, 0)
+        magicien = Magicien(arme=arme, force=0, agilite=0, magie=0,
+                    defense=0, point_de_vie=0)
         expected_output = "Fait tomber des pic de glace"
         # WHEN
         actual_output = magicien.attaque().phrase_attaque
@@ -29,8 +31,9 @@ class TestMagicien(TestCase):
     def test_arme_baton_de_feu(self):
         # GIVEN
         arme = Arme("Necronomicon", 0, 0, 0, 0, 0)
-        magicien = Magicien(arme, 0, 0, 0, 0, 0)
-        expected_output = "Invoque un Grand Ancien"
+        magicien = Magicien(arme=arme, force=0, agilite=0, magie=0,
+                            defense=0, point_de_vie=0)
+        expected_output = ""
         # WHEN
         actual_output = magicien.attaque().phrase_attaque
         # THEN
@@ -40,7 +43,8 @@ class TestMagicien(TestCase):
     def test_ArmeInterditeException(self):
         # GIVEN
         arme = Arme("", 0, 0, 0, 0, 0)
-        magicien = Magicien(arme, 0, 0, 0, 0, 0)
+        magicien = Magicien(arme=arme, force=0, agilite=0, magie=0,
+                            defense=0, point_de_vie=0)
         # WHEN
         # THEN
         with self.assertRaises(ArmeInterditeException):
