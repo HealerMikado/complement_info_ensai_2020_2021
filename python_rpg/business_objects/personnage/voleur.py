@@ -3,8 +3,8 @@ from business_objects.personnage.abstract_personnage import AbstractPersonnage
 
 
 class Voleur(AbstractPersonnage):
-    def __init__(self):
-        super().__init__("Tire à l'arc","Esquive adroitement l'attaque" )
+    def __init__(self, arme, force, agilite, magie, defense, point_de_vie):
+        super().__init__(arme, force, agilite, magie, defense, point_de_vie)
 
     def attaque(self):
         degat = 10
