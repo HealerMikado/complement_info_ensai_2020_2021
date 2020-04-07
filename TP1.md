@@ -23,7 +23,7 @@ Nous savons que notre jeu doit proposer 3 types de personnage, Magicien, Voleur 
 ```mermaid
 classDiagram
 	class Personange {
-	+String type
+	+String personnage_type
 	+String combat()
 	}
 ```
@@ -36,8 +36,8 @@ GUERRIER = "guerrier"
 VOLEUR = "voleur"
 
 class Personnage:
-    def __init__(self, type):
-        self.type = type
+    def __init__(self, personnage_type):
+        self.type = personnage_type
 ```
 
 #### Exercice 1 :
@@ -50,7 +50,7 @@ class Personnage:
   - "Utilise une barrière magique" si le personnage à pour type magicien ;
   - "Pare avec son bouclier" si le personnage à pour type guerrier ;
   - "Esquive adroitement l'attaque" si le personne à pour type voleur
-- Testez votre code en utilisant la classe PersonnageServiceTest. Pour cela il vous suffit de lancer les testes de la classe avec le bouton "play" au niveau de la classe. Si vous avez bien fait les points précédent 1 test doit être en erreur. Corrigez-le.
+- Testez votre code en utilisant la classe PersonnageServiceTest. Pour cela il vous suffit de lancer les testes de la classe avec le bouton "play" au niveau de la classe. Si vous avez bien fait les points précédent 3 test doivent être en erreur. Corrigez-les pour avoir tout vos tests au vert.
 
 
 <!--
@@ -217,7 +217,7 @@ Et le code associé (je vais me limiter à une seule classe fille):
 ````python
 from abc import ABC, abstractmethod
 class AbstractPersonnage(ABC):
-    def __init__(self, phrase_attaque):
+    def __init__(self, phrase_attaque, phrase_defense):
         self.phrase_attaque = phrase_attaque
         self.phrase_defense = phrase_defense
        
