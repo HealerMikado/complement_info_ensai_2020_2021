@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from business_objects.personnage import Personnage, MAGICIEN, GUERRIER, VOLEUR
+from business_objects.personnage.personnage import Personnage, MAGICIEN, GUERRIER, VOLEUR
 from services.personnageService import PersonnageService
 
 

@@ -1,4 +1,4 @@
-from business_objects.personnage import MAGICIEN, VOLEUR, GUERRIER
+from business_objects.personnage.personnage import MAGICIEN, VOLEUR, GUERRIER
 
 
 class PersonnageService:
