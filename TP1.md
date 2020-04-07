@@ -244,14 +244,15 @@ En procédant ainsi, et avec un IDE tel que PyCharm, si vous définissez une cla
 
 #### Exercice 2 :
 
-En vous basant sur la modélisation précédente et le code fourni, codez  dans le package personnage et dans des fichiers séparés les classes:
+- Récupérez le code de la branche tp1_ex2
 
-- AbstractPersonnage
-- Magicien
-- Guerrier
-- Voleur
+- En vous basant sur la modélisation précédente et le code fourni, codez  dans le package personnage et dans des fichiers séparés les classes:
+  - AbstractPersonnage
+  - Magicien
+  - Guerrier
+  - Voleur
 
-
+  
 
 ### 2.3 Gestion des statistiques et composition
 
