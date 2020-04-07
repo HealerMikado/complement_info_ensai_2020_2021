@@ -52,21 +52,6 @@ class Personnage:
   - "Esquive adroitement l'attaque" si le personne à pour type voleur
 - Testez votre code en utilisant la classe test_personnage_service. Pour cela il vous suffit de lancer les testes de la classe avec le bouton "play" au niveau de la classe. Si vous avez bien fait les points précédent 3 test doivent être en erreur. Corrigez-les pour avoir tout vos tests au vert.
 
-
-<!--
-````python
-def combat(personnage):
-    phrase = ''
-    if personnage.type == MAGICIEN:
-        phrase = "Lance une boule de feu"
-    elif personnage.type == GUERRIER:
-        phrase = "Donne un coup d'épée"
-    elif personnage.type == VOLEUR:
-        phrase = "Tire à l'arc"
-    return phrase
-````
--->
-
 Maintenant imaginons que dans une mise à jour de notre jeu nous voulons ajouter 10 nouveaux types de personnage. Cela nous demande d'aller mettre à jour tous nos blocs *if/elif/else*. Actuellement nous en avons uniquement 2, un pour attaquer et un pour défendre, mais on peut imaginer avoir plus de comportement spécifique. Avec l'assurance d'en oublier. Et donc d'avoir des bugs. Cela crée donc un fort **couplage** entre notre classe personnage et les services qui vont l'utiliser.
 
 La bonne solution est donc d'utiliser de l'héritage ! Cela donne le diagramme de classe suivant :
@@ -91,15 +76,15 @@ class Personnage:
         self.phrase_defense = phrase_defense
         
 class Magicien(Personnage):
-    def __init(self):
+    def __init__(self):
         super().__init__("Lance une boule de feu","Utilise une barrière magique" )
        
 class Guerrier(Personnage):
-    def __init(self):
+    def __init__(self):
         super().__init__("Donne un coup d'épée","Pare avec son bouclier"  )
         
 class Voleur(Personnage):
-    def __init(self):
+    def __init__(self):
         super().__init__("Tire à l'arc","Esquive adroitement l'attaque" )
 ````
 
@@ -151,7 +136,7 @@ class Personnage:
         pass
         
 class Magicien(Personnage):
-    def __init(self):
+    def __init__(self):
         super().__init__("Lance une boule de feu","Utilise une barrière magique" )
        
     def attaque(self):
@@ -160,7 +145,7 @@ class Magicien(Personnage):
     
     
 class Guerrier(Personnage):
-    def __init(self):
+    def __init__(self):
         super().__init__("Donne un coup d'épée","Pare avec son bouclier"  )
  
     def attaque(self):
@@ -169,7 +154,7 @@ class Guerrier(Personnage):
         
         
 class Voleur(Personnage):
-    def __init(self):
+    def __init__(self):
         super().__init__("Tire à l'arc","Esquive adroitement l'attaque" )
         
     def attaque(self):
@@ -230,7 +215,7 @@ class AbstractPersonnage(ABC):
         """
         
 class Magicien(AbstractPersonnage):
-    def __init(self):
+    def __init__(self):
         super().__init__("Lance une boule de feu","Utilise une barrière magique" )
        
     def attaque(self):
@@ -443,7 +428,7 @@ class AbstractPersonnage(ABC):
 
                
 class Magicien(Personnage):
-    def __init(self):
+    def __init__(self):
         super().__init__(arme)
        
     def attaque(self):
@@ -524,7 +509,7 @@ class AbstractArme(AbstractEquipement):
         
 
 class Epee(AbstractArme):
-    def __init(self,nom, description_utilisation):
+    def __init__(self,nom, description_utilisation):
         super().__init__(nom,description_utilisation, degat)
       
     def utiliserArme(stat_pers):
@@ -533,7 +518,7 @@ class Epee(AbstractArme):
 
         
 class Baton(AbstractArme):
-    def __init(self,nom, description_utilisation):
+    def __init__(self,nom, description_utilisation):
         super().__init__(nom,description_utilisation, degat)
       
      def utiliserArme(stat_pers):
