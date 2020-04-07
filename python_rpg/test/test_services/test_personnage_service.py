@@ -1,42 +1,52 @@
 from unittest import TestCase
 
-from business_objects.personnage.guerrier import Guerrier
+from business_objects.objet.arme import Arme
 from business_objects.personnage.magicien import Magicien
-from business_objects.personnage.voleur import Voleur
-from services.personnage_service import PersonnageService
+from exceptions.arme_interdite_exception import ArmeInterditeException
+
 
 
 class TestPersonnageService(TestCase):
-    def test_attaque_magicien(self):
-        #GIVEN un personnage de type magicien
-        magicien = Magicien()
-        expected_output = "Lance une boule de feu"
+    def test_arme_baton_de_feu(self):
+        # GIVEN
+        arme = Arme("Baton de feu", 0, 0, 0, 0, 0)
+        magicien = Magicien(arme=arme, force=0, agilite=0, magie=0,
+                    defense=0, point_de_vie=0)
+        expected_output = "Lance des explosions de feu"
+        # WHEN
+        actual_output = magicien.attaque().phrase_attaque
+        # THEN
+        self.assertEqual(expected_output, actual_output)
 
-        #WHEN
-        actual_output = PersonnageService.attaque(magicien)
+    def test_arme_baton_de_feu(self):
+        # GIVEN
+        arme = Arme("", 0, 0, 0, 0, 0)
+        magicien = Magicien(arme=arme, force=0, agilite=0, magie=0,
+                    defense=0, point_de_vie=0)
+        expected_output = "Fait tomber des pic de glace"
+        # WHEN
+        actual_output = magicien.attaque().phrase_attaque
+        # THEN
+        self.assertEqual(expected_output, actual_output)
 
-        #THEN
-        self.assertEqual(expected_output, actual_output.phrase_attaque)
+    def test_arme_baton_de_feu(self):
+        # GIVEN
+        arme = Arme("Necronomicon", 0, 0, 0, 0, 0)
+        magicien = Magicien(arme=arme, force=0, agilite=0, magie=0,
+                            defense=0, point_de_vie=0)
+        expected_output = ""
+        # WHEN
+        actual_output = magicien.attaque().phrase_attaque
+        # THEN
+        self.assertEqual(expected_output, actual_output)
 
-    def test_attaque_guerrier(self):
-        #GIVEN un personnage de type guerrier
-        guerrier = Guerrier()
-        expected_output = "Donne un coup d'épée"
 
-        #WHEN
-        actual_output = PersonnageService.attaque(guerrier)
-
-        #THEN
-        self.assertEqual(expected_output, actual_output.phrase_attaque)
-
-    def test_attaque_voleur(self):
-        #GIVEN un personnage de type voleur
-        voleur = Voleur()
-        expected_output = "Tire à l'arc"
-
-        #WHEN
-        actual_output = PersonnageService.attaque(voleur)
-
-        #THEN
-        self.assertEqual(expected_output, actual_output.phrase_attaque)
-
+    def test_ArmeInterditeException(self):
+        # GIVEN
+        arme = Arme("", 0, 0, 0, 0, 0)
+        magicien = Magicien(arme=arme, force=0, agilite=0, magie=0,
+                            defense=0, point_de_vie=0)
+        # WHEN
+        # THEN
+        with self.assertRaises(ArmeInterditeException):
+            magicien.attaque().phrase_attaque
