@@ -1,4 +1,4 @@
-from business_objects.personnage.personnage import MAGICIEN, VOLEUR, GUERRIER
+from business_objects.personnage.abstract_personnage import AbstractPersonnage
 
 
 class PersonnageService:
@@ -14,11 +14,11 @@ class PersonnageService:
         """
         Détermine à partir d'un personnage le texte de son attaque
         :param personnage: le personnage qui attaque
-        :type personnage: Personnage.personnage
+        :type personnage: AbstractPersonnage
         :return: la phrase de l'attaque
         :rtype: str
         """
-        pass
+        return personnage.attaque()
 
     @staticmethod
     def defense(personnage):
