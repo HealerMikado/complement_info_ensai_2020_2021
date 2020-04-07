@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from business_objects.personnage.personnage import Personnage, MAGICIEN, GUERRIER, VOLEUR
-from services.personnageService import PersonnageService
+from services.personnage_service import PersonnageService
 
 
 class TestPersonnageService(TestCase):
@@ -16,7 +16,7 @@ class TestPersonnageService(TestCase):
         #THEN
         self.assertEqual(expected_output, actual_output)
 
-    def test_attaque_magicien(self):
+    def test_attaque_guerrier(self):
         #GIVEN un personnage de type guerrier
         guerrier = Personnage(GUERRIER)
         expected_output = "Donne un coup d'épée"
@@ -27,7 +27,7 @@ class TestPersonnageService(TestCase):
         #THEN
         self.assertEqual(expected_output, actual_output)
 
-    def test_attaque_magicien(self):
+    def test_attaque_voleur(self):
         #GIVEN un personnage de type voleur
         voleur = Personnage(VOLEUR)
         expected_output = "Danse la carioca"

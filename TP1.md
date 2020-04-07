@@ -50,7 +50,7 @@ class Personnage:
   - "Utilise une barrière magique" si le personnage à pour type magicien ;
   - "Pare avec son bouclier" si le personnage à pour type guerrier ;
   - "Esquive adroitement l'attaque" si le personne à pour type voleur
-- Testez votre code en utilisant la classe PersonnageServiceTest. Pour cela il vous suffit de lancer les testes de la classe avec le bouton "play" au niveau de la classe. Si vous avez bien fait les points précédent 3 test doivent être en erreur. Corrigez-les pour avoir tout vos tests au vert.
+- Testez votre code en utilisant la classe test_personnage_service. Pour cela il vous suffit de lancer les testes de la classe avec le bouton "play" au niveau de la classe. Si vous avez bien fait les points précédent 3 test doivent être en erreur. Corrigez-les pour avoir tout vos tests au vert.
 
 
 <!--
